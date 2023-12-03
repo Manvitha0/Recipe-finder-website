@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Crimson Text', serif;
+}
+
+:root{
+    --bg-color:#e15f41;
+    --sbg-color:#ff9d85;
+    --border-color:black;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: var(--sbg-color);
+    overflow-x: hidden;
+    
+}
+.container{
+    text-align: center;
+    height: calc(100vh-70px);
+    
+}
+header{
+    height: 70px;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    gap: 10px;
+    padding-right: 30px;
+    font-size: 2rem;
+    
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    /* box-shadow: 0px 2px 8px 0px black; */
+}
+.search{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    gap: 10px;
+  
+    box-shadow: 0px 2px 8px 0px rgb(37, 36, 36);
+    
+}
+.search input[type="text"] {
+    padding: 8px 10px;
+    line-height: 1.5;
+    font-size: 1rem;
+    border: none;
+    border-left:1px solid black;
+    border-bottom:1px solid transparent;
+    outline: none;
+    transition: all 200ms ease-in-out;
+    width: 60%;
+}
+.search input[type="text"]:focus{
+    border-left-color:transparent;
+    border-bottom-color: black; 
+    width: 61%;
+}
+.btn{
+    padding: 8px 10px;
+    background: white;
+    font-size: 1rem;
+    border-radius: 2px;
+    user-select: none;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.btn:hover{
+    background:var(--bg-color);
+    border-color: var(--bg-color);
+    color: black;
+}
+#recipe-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* padding-top: 15px; */
+    flex-wrap: wrap;
+    height: calc(100vh-(70px+60px+20px));
+     
+    
+}
+.recipe{
+    height: 300px;
+    width: 300px;
+    padding: 8px;
+    /* background: var(--bg-color); */
+    box-shadow: 0px 0px 8px 2px black;
+    margin: 20px;
+    transition: all 200ms ease-in-out;
+    border-radius: 4px 4px 0px 0px;
+
+}
+
+.title{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    
+}
+.image{
+    height: 210px;
+    
+}
+.image img{
+    height: 100%;
+    width: 90%;
+    
+}
+.text{
+    height: 120px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+    margin-top: 20px;
+    /* background: #ff9d85; */
+    overflow: hidden;
+    overflow-y: auto;
+    transform: scale(.8);
+    transform-origin: top left;
+
+}
+.text ul {
+    list-style-type:square;
+    text-align: left;
+    list-style-position: inside;
+    padding:5px;
+}
+.text ul>li{
+    padding: 5px;
+}
+.recipe:hover .text{
+    height: 120px;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.recipe:hover{
+    height: 420px;
+    background: var(--bg-color);
+}
+::selection{
+    color: #000000;
+    background: rgb(235, 112, 112);
+}
+#loading{
+    background: url('img2/cartoon-snail-loading-loading-gif-animation_2734139.png!sw800') no-repeat center center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+}
+.hide{
+    display: none;
+}
+@media only screen and (max-width:700px){
+    body{
+        background: #e15f41;
+    
+    }
+    .recipe{
+        background: var(--sbg-color);
+        box-shadow: 0px 0px 10px 2px black;
+        width: 350px;
+    }
+    input[type="text"]{
+        background:white;
+        color: black;
+    }
+    .btn{
+        background: white;
+        color: black;
+    }
+}
+::-webkit-scrollbar{
+    width: 10px;
+
+}
+::-webkit-scrollbar-track{
+    background: var(--sbg-color);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #000000;
+}
+#mybtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color:var(--sbg-color);
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+#mybtn:hover{
+    background-color: var(--bg-color);
+}
